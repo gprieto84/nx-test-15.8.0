@@ -40,7 +40,7 @@ jobs:
       - name: ⚙️ Expose yarn config as "$GITHUB_OUTPUT"
         shell: bash
         run: |
-          echo ${{ github.ref_name }}
+          echo ${{ github.sha }}
 
       - name: Linting
-        run: npx nx affected -t lint --base=${{ github.ref_name }} --parallel
+        run: npx nx affected -t lint --base=${{ github.sha }} --parallel

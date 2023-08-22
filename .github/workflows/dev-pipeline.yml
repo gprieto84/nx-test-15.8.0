@@ -29,13 +29,9 @@ jobs:
       - name: Set up NodeJS LTS
         uses: ./.github/actions/setup-node
 
-      - name: Install dependecies
-        uses: ./.github/actions/install-dependencies
-        with:
-          cwd: '.'
-          enable-corepack: false
-          cache-node-modules: true
-          cache-install-state: true
+      - name: 📥 Install dependencies
+        shell: bash
+        run: npm install
 
       - name:
           Derive appropriate SHAs for base and head for `nx affected` commands

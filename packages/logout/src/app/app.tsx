@@ -6,7 +6,7 @@ import NxWelcome from './nx-welcome';
 export function App() {
   return (
     <>
-      <NxWelcome title="logout" />
+      <NxWelcome title="logout - Mod" />
 
       <div />
     </>

@@ -43,4 +43,4 @@ jobs:
           echo ${{ github.ref_name }}
 
       - name: Linting
-        run: npx nx affected -t lint --base=origin/${{ github.ref_name }} --parallel
+        run: npx nx affected -t lint --base=${{ github.ref_name }} --parallel

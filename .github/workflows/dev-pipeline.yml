@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - dev
-  workflow_dispatch:
+  pull_request:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
@@ -40,7 +40,8 @@ jobs:
       - name: ⚙️ Expose yarn config as "$GITHUB_OUTPUT"
         shell: bash
         run: |
-          echo ${{ github.sha }}
+          echo ${{ github.ref_name }}
+
 
       - name: Linting
-        run: npx nx affected -t lint --base=${{ github.sha }} --parallel
+        run: npx nx affected -t lint --base=origin/dev --parallel
